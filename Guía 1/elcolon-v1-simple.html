@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Colón — Billetes y Monedas de El Salvador</title>
+<meta name="description" content="Billetes y monedas de El Salvador: artículos, consejos y recursos de notafilia y numismática.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2B22;
+    --parchment:#F3ECDA;
+    --card:#FFFDF8;
+    --gold:#B8862B;
+    --brown:#6B4226;
+    --muted:#585F55;
+    --line: rgba(30,43,34,0.12);
+    --radius: 4px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Public Sans', sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Spectral', serif;
+    margin:0 0 .4em 0;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header{
+    background:var(--ink);
+    color:var(--parchment);
+    position:sticky;top:0;z-index:20;
+    border-bottom:1px solid rgba(243,236,218,.15);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 24px;max-width:1080px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--parchment);}
+  .brand .mark{
+    font-family:'Spectral',serif;font-weight:700;font-size:1.5rem;color:var(--gold);
+  }
+  .brand .full{font-size:.85rem;letter-spacing:.5px;color:rgba(243,236,218,.75);}
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav a{text-decoration:none;font-size:.95rem;color:rgba(243,236,218,.88);position:relative;}
+  nav a:hover{color:var(--gold);}
+  .tag{
+    display:inline-block;margin-left:6px;font-size:.68rem;padding:2px 6px;
+    border-radius:2px;background:var(--gold);color:var(--ink);font-weight:700;
+  }
+  .tag.soon{background:transparent;border:1px solid rgba(243,236,218,.4);color:rgba(243,236,218,.7);font-weight:500;}
+
+  /* Hero */
+  .hero{
+    padding:72px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;}
+  .eyebrow{color:var(--brown);font-size:.95rem;margin-bottom:10px;}
+  .hero h1{font-size:2.6rem;line-height:1.15;max-width:11ch;}
+  .hero p{max-width:46ch;color:var(--muted);font-size:1.05rem;}
+  .cta{
+    display:inline-block;margin-top:20px;padding:12px 22px;background:var(--ink);color:var(--parchment);
+    text-decoration:none;border-radius:var(--radius);font-weight:600;font-size:.95rem;
+  }
+  .cta:hover{background:var(--brown);}
+  .hero-art{width:100%;height:auto;}
+
+  /* Sections */
+  section{padding:56px 0;}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:14px;}
+  .section-head h2{font-size:1.7rem;margin:0;}
+  .section-head span{color:var(--muted);font-size:.9rem;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:10px;
+  }
+  .card .thumb{border-radius:2px;margin-bottom:6px;}
+  .card h3{font-size:1.15rem;}
+  .card p{color:var(--muted);font-size:.94rem;margin:0;flex:1;}
+  .card .byline{font-size:.82rem;color:var(--brown);font-weight:600;}
+  .card .status{font-size:.78rem;color:var(--gold);font-weight:700;}
+  .card a.read{font-size:.88rem;font-weight:600;color:var(--ink);text-decoration:none;border-top:1px solid var(--line);padding-top:10px;margin-top:6px;}
+  .card a.read:hover{color:var(--brown);}
+
+  footer{background:var(--ink);color:rgba(243,236,218,.75);padding:32px 0;margin-top:40px;}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.88rem;}
+  footer a{color:var(--gold);text-decoration:none;}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{max-width:none;font-size:2.1rem;}
+    .cards{grid-template-columns:1fr;}
+    nav ul{gap:16px;flex-wrap:wrap;}
+    .nav-row{flex-direction:column;align-items:flex-start;gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a class="brand" href="#inicio">
+      <span class="mark">₡</span>
+      <span class="full">UnColón&nbsp;— Billetes y Monedas de El Salvador</span>
+    </a>
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#articulos">Artículos</a></li>
+        <li><a href="#consejos">Consejos</a></li>
+        <li><a href="#billetes">Billetes <span class="tag">Recomendado</span></a></li>
+        <li><a href="#monedas">Monedas <span class="tag soon">Pronto</span></a></li>
+        <li><a href="#contribuir">Contribuir</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Notafilia y numismática salvadoreña</div>
+        <h1>La memoria monetaria de El Salvador, en un solo lugar</h1>
+        <p>Artículos, guías de conservación y catálogos de billetes y monedas para quienes coleccionan, investigan o simplemente sienten curiosidad por la historia del colón.</p>
+        <a class="cta" href="#articulos">Explorar artículos</a>
+      </div>
+      <svg class="hero-art" viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de un billete estilizado">
+        <rect x="4" y="4" width="352" height="212" rx="6" fill="#F3ECDA" stroke="#B8862B" stroke-width="2"/>
+        <rect x="16" y="16" width="328" height="188" rx="3" fill="none" stroke="#6B4226" stroke-width="1" stroke-dasharray="2 3"/>
+        <circle cx="90" cy="110" r="46" fill="none" stroke="#1E2B22" stroke-width="2"/>
+        <text x="90" y="120" text-anchor="middle" font-family="Spectral, serif" font-size="34" fill="#1E2B22">₡</text>
+        <text x="230" y="70" font-family="Spectral, serif" font-size="16" fill="#6B4226">BANCO CENTRAL</text>
+        <text x="230" y="92" font-family="Spectral, serif" font-size="13" fill="#6B4226">DE RESERVA</text>
+        <text x="230" y="150" font-family="Public Sans, sans-serif" font-size="11" fill="#585F55">EL SALVADOR, C. A.</text>
+        <line x1="200" y1="30" x2="340" y2="30" stroke="#B8862B" stroke-width="1"/>
+        <line x1="200" y1="190" x2="340" y2="190" stroke="#B8862B" stroke-width="1"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="articulos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Artículos</h2>
+        <span>3 publicaciones</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>¿Qué es la notafilia?</h3>
+          <p>Datos básicos sobre la notafilia y una breve reseña histórica del coleccionismo de billetes.</p>
+          <a class="read" href="art_quees.php">Leer artículo →</a>
+        </article>
+
+        <article class="card">
+          <h3>Graduación de las notas bancarias según la IBNS</h3>
+          <div class="status">Próximamente</div>
+          <p>Una tabla para conocer cómo se clasifica el estado de conservación de un billete, tomada de la Sociedad Internacional de Notas Bancarias.</p>
+          <a class="read" href="#" aria-disabled="true">Disponible pronto →</a>
+        </article>
+
+        <article class="card">
+          <div class="byline">Por Carlos Quintanilla</div>
+          <h3>El último suspiro del colón salvadoreño</h3>
+          <p>La historia de la numismática y la notafilia en El Salvador, desde el descubrimiento del territorio hasta la dolarización y las monedas de 5 colones de 1997 que nunca circularon.</p>
+          <a class="read" href="art_suspiro1.php">Leer artículo →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>Billetes y Monedas de El Salvador — © Edgar Borja 2006</span>
+    <a href="mailto:admin@uncolon.com">admin@uncolon.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
