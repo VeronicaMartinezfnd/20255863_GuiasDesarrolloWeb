@@ -1,0 +1,46 @@
+/* ===== Variables ===== */
+:root {
+    --color-fondo: #05070a;
+    --color-superficie: #0f1720;
+    --color-superficie-alt: #141d28;
+    --color-dorado: #d1a954;
+    --color-texto: #f2f0ea;
+    --color-texto-tenue: #aab2bf;
+    --color-borde: #rgba(255, 255, 255, 0.08);
+
+    --fuente-titulos: Georgia, "Times New Roman", serif;
+    --fuente-texto: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 20px;
+}
+
+body{
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-texto);
+}
+
+/*
+3.4 rem equivale a 68px
+1.4 rem equivale a 28px
+0.95 rem equivale a 19px
+0.7 rem equivale a 14px
+*/
+
+.wrapper{
+    margin: 0 auto;
+    width: 86%;
+    max-width: 860px;
+}
+
+.hero{
+    background-image: linear-gradient(180deg, rgba(5, 7, 10, 0.35), rgba(5, 7, 10, 0.95)), url("../img/hero.jpg");
+    background-size: ;
+}
