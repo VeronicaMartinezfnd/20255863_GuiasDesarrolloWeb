@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta con El Colón.">
+  <title>El Colón | Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html">El Colón</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <div class="nav-menu" id="menu">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="catalogo.html">Catálogo</a>
+        <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+        <a class="nav-cta" href="catalogo.html">Ver catálogo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero container reveal">
+      <p class="eyebrow">Conversemos</p>
+      <h1>Contacto</h1>
+      <p>
+        ¿Tienes una pieza, una historia o una pregunta sobre la numismática salvadoreña?
+        Puedes escribirnos.
+      </p>
+    </section>
+
+    <section class="section container contact-layout">
+      <div class="form-card reveal">
+        <p class="eyebrow">Escríbenos</p>
+        <h2>Cuéntanos qué tienes en mente.</h2>
+
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+            <small class="error-message" id="nombre-error"></small>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required>
+            <small class="error-message" id="correo-error"></small>
+          </div>
+
+          <div class="field">
+            <label for="asunto">Asunto</label>
+            <input id="asunto" name="asunto" type="text" required>
+            <small class="error-message" id="asunto-error"></small>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+            <small class="error-message" id="mensaje-error"></small>
+          </div>
+
+          <button class="button" type="submit">Enviar</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <aside class="slate-panel contact-panel reveal">
+        <div class="display-card">
+          <p class="eyebrow">La pequeña vitrina</p>
+          <h2>El Colón</h2>
+          <p>Un proyecto dedicado a la historia de los billetes y monedas de El Salvador.</p>
+
+          <div class="contact-info">
+            <div>
+              <span>Correo</span>
+              <strong>hola@elcolon.com</strong>
+            </div>
+            <div>
+              <span>Horario</span>
+              <strong>Lunes a viernes · 9:00 a.m. – 4:00 p.m.</strong>
+            </div>
+            <div>
+              <span>Dato</span>
+              <strong>Historia, notafilia y numismática salvadoreña.</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand" href="index.html">El Colón</a>
+        <p>Un espacio para descubrir la historia numismática de El Salvador.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

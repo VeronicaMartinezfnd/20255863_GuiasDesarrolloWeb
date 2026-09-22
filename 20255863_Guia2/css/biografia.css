@@ -1,0 +1,191 @@
+/* ===========================================
+   ESTILOS GENERALES
+   =========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* para que padding no altere el ancho de los elementos */
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2c3b3a;
+  background-color: #fdfaf5;
+}
+
+h1, h2 {
+  font-family: 'Palatino Linotype', Georgia, serif;
+  font-weight: normal;
+  color: #263332;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ===========================================
+   ENCABEZADO / NAVEGACIÓN
+   =========================================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* logo a la izquierda, enlaces a la derecha */
+  align-items: center;
+  background-color: #e3e6dc;
+  padding: 20px 60px;
+}
+
+.logo {
+  font-size: 1.6rem;
+}
+
+.enlaces {
+  display: flex;
+  gap: 30px;
+}
+
+.enlaces a {
+  text-decoration: none;
+  color: #2c3b3a;
+}
+
+.enlaces a.activo {
+  border-bottom: 2px solid #2c3b3a; /* subraya el enlace activo, como en el diseño original */
+  padding-bottom: 4px;
+}
+
+/* ===========================================
+   SECCIÓN INICIO
+   =========================================== */
+
+.inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0ede2;
+  padding: 60px;
+}
+
+.inicio-texto {
+  max-width: 500px;
+}
+
+.inicio-texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.inicio-texto p {
+  font-size: 1.1rem;
+}
+
+.inicio-decoracion {
+  width: 180px;
+  height: 180px;
+  background-color: #dbe0d2;
+  border-radius: 50% 40% 50% 40%; /* forma orgánica parecida a la del diseño */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flor {
+  font-size: 3rem;
+}
+
+/* ===========================================
+   SECCIÓN SOBRE MÍ
+   =========================================== */
+
+.sobre-mi {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 60px;
+}
+
+.foto {
+  width: 350px;
+  height: 350px;
+  object-fit: cover; /* recorta la imagen sin deformarla */
+  border-radius: 8px;
+}
+
+.sobre-mi-texto {
+  max-width: 500px;
+}
+
+.sobre-mi-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre-mi-texto p {
+  margin-bottom: 15px;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #5a6d5c;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+}
+
+/* ===========================================
+   SECCIÓN INTERESES
+   =========================================== */
+
+.intereses {
+  background-color: #e9ece1;
+  padding: 60px;
+}
+
+.intereses h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.intereses-lista {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* si la pantalla es angosta, los elementos pasan a otra línea */
+  gap: 30px;
+}
+
+.interes {
+  display: flex;
+  flex-direction: column; /* icono arriba, texto abajo */
+  align-items: center;
+  gap: 10px;
+}
+
+.icono {
+  font-size: 2.2rem;
+}
+
+/* ===========================================
+   PIE DE PÁGINA
+   =========================================== */
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4b5a4d;
+  color: white;
+  padding: 25px 60px;
+}
+
+.redes {
+  display: flex;
+  gap: 20px;
+}
+
+.redes a {
+  color: white;
+  text-decoration: none;
+}
