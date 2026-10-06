@@ -1,0 +1,374 @@
+/*Estilos iniciales*/
+
+:root {
+    --color-texto: #342e29;
+    --color-fondo: #f5efe6;
+    --color-principal: #293e36;
+    --color-acento: #93472f;
+    --color-superficie: #ffffff;
+    --color-contraste: #ead1ad;
+    --color-borde: #ded3c4;
+    --color-fondo-secundario: #eadfce;
+    --color-capa-inicial: rgba(25, 35, 29, 0.85);
+    --color-capa-final: rgba(25, 35, 29, 0.65);
+    --color-sombra: rgba(52, 46, 41, 0.10);
+}
+
+/*4. Escriba una regla para body*/
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*7. Configure los estilos de texto*/
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2,
+h3 {
+    color: var(--color-principal);
+}
+
+a {
+    color: var(--color-acento);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--color-principal);
+}
+
+/*Encabezado y menú*/
+
+.encabezado-principal {
+    color: var(--color-superficie);
+    background-color: var(--color-principal);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.marca {
+    color: var(--color-superficie);
+    font-size: 1.15rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*9. Distribuya la barra con Flexbox*/
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    padding: 1rem;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    color: var(--color-contraste);
+}
+
+/*Presentación principal*/
+
+.presentacion {
+    padding: 4rem 0;
+    color: var(--color-superficie);
+    background-color: var(--color-principal);
+    background-image: linear-gradient(to right,
+        var(--color-capa-inicial),
+        var(--color-capa-final)),
+        url("../images/gran-muralla-china.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/*Formatee el contenido de presentación*/
+.presentacion h1 {
+    max-width: 760px;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.presentacion p {
+    max-width: 640px;
+}
+
+.sobretitulo {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--color-acento);
+}
+
+.presentacion .sobretitulo {
+    color: var(--color-contraste);
+}
+
+/*Construya el botón principal*/
+.boton-principal {
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    color: white;
+    background-color: var(--color-acento);
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+.boton-principal:hover,
+.boton-principal:focus-visible {
+    color: var(--color-principal);
+    background-color: var(--color-contraste);
+}
+
+/*Construcción de la galería*/
+
+.seccion-maravillas {
+    padding: 3rem 0;
+}
+
+.titulo-seccion {
+    max-width: 680px;
+    margin-bottom: 2rem;
+}
+
+.titulo-seccion h2 {
+    margin: 0 0 0.75rem;
+    font-size: 2rem;
+}
+
+.maravillas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/*
+    16:
+    a) Por defecto, flexbox viene configurado en dirección de fila, es por eso que intenta formar una sola línea.
+
+    b) El ancho de las tarjetas se encoge y se comprime para intentar "acomodarse" dentro de una sola línea.
+
+    c) No, al ser tan angostos, el texto y las imágenes de las tarjetas pierden espacio lo que vuelve incomoda la visualización de la información.
+*/
+
+/*Al agregar la propiedad flex-wrap: wrap; Flexbox permite que las tarjetas salten a una nueva línea cuando sea necesario, debido a que no quepan en el ancho de su contenedor*/
+
+.maravilla {
+    flex: 1 1 300px;
+    max-width: 360px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px var(--color-sombra);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/*19:
+    El gap es la distancia entre los elementos que se encuentran dentro del contenedor , no añade espacio en los bordes exteriores a diferencia del padding que define el espacio interno de cada elemento.
+*/
+
+/*20:
+    a) Porque Flexbox distribuye todo el espacio el espacio sobrante de una fila entre los elementos dentro del contenedor, es por ello que si solo hay una tarjeta en la última fila, esta trata de ocupar todo el espacio disponible.
+
+    b) El primer valor de la propiedad flex, el 1 corresponde a flex-grow.
+
+    c) No, por lo general estas suelen romper la estética visual de la página.
+*/
+
+/*22:
+    La propiedad border-radius redondea los bordes del contenedor, pero por defecto los elementos hijos pueden sobresalir de esos límites. Al aplicar la propiedad overflow: hidden; todo el contenido hijo que se extienda más allá del borde redondeado se recorta automáticamente, respetando el border-radius.
+*/
+
+.maravilla img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/*23:
+    a) No, al forzar un ancho de 100% y la altura fija de 220px, la imagen se estira o comprime para ajustarse a esas dimensiones, lo que puede distorsionar la imagen original.
+
+    b) Las imagenes horizontales se estiran verticalmente para ajustarse a la altura de 220px, mientras que las imágenes verticales se comprimen horizontalmente para ajustarse al ancho de 100%, lo que puede resultar en una apariencia distorsionada.
+
+    R// Los bordes extremos de la imagen pueden quedar fuera del marco y recortarse visualmente par mantener la relación de aspecto.
+*/
+
+.maravilla-contenido {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.maravilla-contenido h3 {
+    font-size: 1.35rem;
+    margin: 0.25rem 0 0.75rem;
+}
+
+.maravilla-contenido a {
+    font-weight: bold;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.ubicacion {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-acento);
+}
+
+/*26:
+    El valor margin-top absorbe todo el espacio vertical  disponiblensobrante situado por encima del enlace, empujando el botón o enlace directamente hacia la parte inferior del contenedor.
+*/
+
+/*27:
+    a) Se desplazó hacia la derecha (50px) y hacia abajo (30px) con respecto a su posición original.
+
+    b) Se calcula desde su posición inicial.
+
+    c) Sí las demas tarjetas mantienen su posición orginal.
+
+    d)Sí, al ser deslazada visualmente de su espacio reservado , puede traslaparse o quedar encima/debajo de otra tarjetas adyacentes.
+*/
+
+/*28:
+    a) Se desplaza hacia la izquierda
+
+    b) Porque las propiedades de desplazamiento no indican la dirección del movimiento sino la de separación desde el punto de referencia original.
+*/
+
+/*29:
+  a) Se recorrieron hacia arriba y a la izquierda para ocupar el espacio que dejó vacante la tarjeta de Petra.
+
+  b) No, al usar position: absolute el elemento sale del flujo normal y ya no se reserva su espacio.
+
+  c) Respecto al área inicial del documento o la ventana del navegador (viewport).
+*/
+
+/*30:
+  a) Se calculan desde los bordes superior e izquierdo del contenedor .maravillas.
+
+  b) Porque CSS toma como referencia el ancestro posicionado más cercano. Al agregar position: relative al contenedor, este pasa a ser el punto de referencia.
+*/
+
+/*31:
+  a) El posicionamiento relativo (position: relative).
+
+  b) El posicionamiento absoluto (position: absolute).
+
+  c) Buscando hacia arriba en el HTML el primer ancestro posicionado (relative, absolute, fixed o sticky). Si no hay ninguno, se toma la ventana del navegador.
+*/
+
+.maravilla-imagen {
+    position: relative;
+}
+
+.continente {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    padding: 0.25rem 0.75rem;
+    color: var(--color-superficie);
+    background-color: var(--color-acento);
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/*Posicionamiento adherente y orden de superposición*/
+
+/*35:
+  a) No, no permanece adherido.
+
+  b) Falta definir una coordenada de umbral (como top, bottom, left o right) que indique a qué distancia del borde del viewport debe fijarse el elemento.
+*/
+
+/*37:
+  El encabezado necesita un valor de z-index superior (z-index: 10) al de las etiquetas (z-index: 1) porque, de lo contrario, al desplazar la página las etiquetas posicionadas pasan por encima del encabezado. Al asignarle un z-index mayor, el encabezado se mantiene siempre en un nivel tridimensional superior, cubriendo correctamente todos los elementos del contenido al hacer scroll.
+*/
+
+/*Posicionamiento fijo y modelo de caja*/
+
+.volver-arriba {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    color: var(--color-superficie);
+    background-color: var(--color-acento);
+    border: 2px solid var(--color-superficie);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/*38:
+  a) El encabezado (position: sticky), ya que conserva su lugar original en el flujo normal hasta que se alcanza el punto de adhesión.
+
+  b) El botón volver arriba (position: fixed), ya que se ubica directamente respecto a la ventana (viewport) desde el inicio y sale por completo del flujo normal.
+*/
+
+.seccion-historia {
+  padding: 3rem 0;
+  background-color: var(--color-fondo-secundario);
+}
+
+.historia-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.historia-contenido > * {
+  flex: 1 1 300px;
+}
+
+.pie-pagina {
+  padding: 2rem 0 5rem;
+  color: var(--color-superficie);
+  background-color: var(--color-principal);
+}

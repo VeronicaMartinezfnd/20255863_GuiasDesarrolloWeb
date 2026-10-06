@@ -1,0 +1,581 @@
+/* ==========================================================================
+   1. VARIABLES, RESET Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+
+:root {
+  /* Paleta de colores oficial */
+  --color-verde-oscuro: #0f3e17;
+  --color-verde-salvia: #b1dbb8;
+  --color-verde-claro: #e1f4df;
+  --color-menta: #cfe7d3;
+  --color-azul-grisaceo: #b6ced5;
+  --color-crema: #fffefc;
+  
+  /* Tonos neutros auxiliares */
+  --color-texto-principal: #1f2922;
+  --color-texto-suave: #4a554d;
+  --color-borde: #dce7dd;
+
+  /* Tipografías */
+  --font-titulos: 'Cormorant Garamond', Georgia, serif;
+  --font-cuerpo: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-crema);
+  color: var(--color-texto-principal);
+  font-family: var(--font-cuerpo);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Envoltorio común para limitar ancho y centrar */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN (Uso de Flexbox para componentes de barra)
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--color-crema);
+  border-bottom: 1px solid var(--color-borde);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.brand {
+  font-family: var(--font-titulos);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--color-verde-oscuro);
+  letter-spacing: -0.02em;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-texto-suave);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-verde-oscuro);
+  font-weight: 600;
+}
+
+/* Botones genéricos */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-crema);
+}
+
+.btn-primary:hover {
+  background-color: #165822;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-verde-oscuro);
+  color: var(--color-verde-oscuro);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-verde-claro);
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA PRINCIPAL MEDIANTE CSS GRID
+   ========================================================================== */
+
+/* --- SECCIÓN HERO --- */
+.hero-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  
+  /* CSS Grid Principal */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-verde-claro);
+  color: var(--color-verde-oscuro);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-family: var(--font-titulos);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.hero-card {
+  background-color: var(--color-menta);
+  border-radius: 16px;
+  padding: 3rem;
+  border: 1px solid var(--color-verde-salvia);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 380px;
+}
+
+.hero-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-verde-oscuro);
+  font-weight: 600;
+}
+
+.coin-symbol {
+  font-family: var(--font-titulos);
+  font-size: 5rem;
+  color: var(--color-verde-oscuro);
+  line-height: 1;
+}
+
+.hero-card h3 {
+  font-family: var(--font-titulos);
+  font-size: 2rem;
+  color: var(--color-verde-oscuro);
+}
+
+.card-subtext {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+/* --- SECCIÓN ARTÍCULOS DESTACADOS --- */
+.featured-section {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.section-subtitle {
+  color: var(--color-verde-oscuro);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-titulos);
+  font-size: 2.75rem;
+  color: var(--color-verde-oscuro);
+  font-weight: 400;
+}
+
+/* CSS Grid para las 3 tarjetas de artículos */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.article-card {
+  background-color: var(--color-crema);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(15, 62, 23, 0.06);
+  border-color: var(--color-verde-salvia);
+}
+
+.article-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1.25rem;
+}
+
+.category {
+  font-weight: 600;
+  color: var(--color-verde-oscuro);
+}
+
+.article-title {
+  font-family: var(--font-titulos);
+  font-size: 1.75rem;
+  color: var(--color-verde-oscuro);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.article-excerpt {
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.link-more {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-verde-oscuro);
+  transition: padding-left 0.2s ease;
+}
+
+.link-more:hover {
+  padding-left: 4px;
+}
+
+/* --- SECCIÓN "¿POR QUÉ COLECCIONAR?" --- */
+.why-section {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  background-color: var(--color-verde-claro);
+  border-radius: 24px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* CSS Grid para las 3 razones */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.reason-card {
+  background-color: var(--color-crema);
+  padding: 2.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-menta);
+}
+
+.reason-number {
+  font-family: var(--font-titulos);
+  font-size: 2.5rem;
+  color: var(--color-verde-salvia);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.reason-title {
+  font-family: var(--font-titulos);
+  font-size: 1.85rem;
+  color: var(--color-verde-oscuro);
+  margin-bottom: 0.75rem;
+}
+
+.reason-text {
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+}
+
+/* --- SECCIÓN PIEZA DESTACADA (SEMANA) --- */
+.featured-piece-section {
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
+
+/* CSS Grid con asignación explícita de columnas */
+.piece-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  background-color: var(--color-azul-grisaceo);
+  padding: 3.5rem;
+  border-radius: 20px;
+}
+
+.piece-title {
+  font-family: var(--font-titulos);
+  font-size: 2.75rem;
+  color: var(--color-verde-oscuro);
+  line-height: 1.15;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.piece-description {
+  color: var(--color-texto-principal);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.piece-showcase-card {
+  background-color: var(--color-crema);
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 15px 30px rgba(15, 62, 23, 0.08);
+  position: relative;
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-crema);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.bill-preview {
+  height: 180px;
+  background: linear-gradient(135deg, var(--color-menta), var(--color-verde-salvia));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  border: 1px dashed var(--color-verde-oscuro);
+  margin-bottom: 1.5rem;
+}
+
+.bill-watermark {
+  font-family: var(--font-titulos);
+  font-size: 3rem;
+  font-weight: 600;
+  color: rgba(15, 62, 23, 0.15);
+}
+
+.bill-details {
+  text-align: right;
+  color: var(--color-verde-oscuro);
+}
+
+.bill-denomination {
+  display: block;
+  font-family: var(--font-titulos);
+  font-size: 3.5rem;
+  line-height: 0.9;
+  font-weight: 600;
+}
+
+.bill-currency {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+
+.piece-meta h4 {
+  font-family: var(--font-titulos);
+  font-size: 1.5rem;
+  color: var(--color-verde-oscuro);
+}
+
+.piece-meta p {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+/* ==========================================================================
+   4. PIE DE PÁGINA (CSS Grid)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-verde-oscuro);
+  color: var(--color-crema);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+}
+
+.footer-brand {
+  font-family: var(--font-titulos);
+  font-size: 2.25rem;
+  color: var(--color-crema);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.footer-tagline {
+  color: var(--color-verde-salvia);
+  font-size: 0.95rem;
+  max-width: 320px;
+}
+
+.footer-heading {
+  font-family: var(--font-cuerpo);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--color-verde-salvia);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--color-crema);
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-verde-salvia);
+}
+
+.footer-copyright {
+  color: var(--color-verde-salvia);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   5. DISEÑO RESPONSIVE (Media Queries para reorganización de CSS Grid)
+   ========================================================================== */
+
+/* Tablet (hasta 992px) */
+@media (max-width: 992px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .piece-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Teléfono (hasta 600px) */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .piece-grid-container {
+    padding: 1.75rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

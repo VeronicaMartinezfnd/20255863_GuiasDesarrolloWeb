@@ -1,0 +1,51 @@
+/* Estilos generales*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 20px;
+}
+
+h1 {
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Espaciado entre ambos resultados */
+.bloque-ejercicio {
+    margin-bottom: 230px;
+}
+
+/* El contenedor relativo reserva el espacio e impide 
+   que los elementos absolutos tapen los títulos */
+.contenedor-cartas {
+    position: relative;
+    height: 180px;
+}
+
+/* Regla común para posicionar las cartas */
+.carta {
+    position: absolute;
+}
+
+/* Desplazamiento en diagonal para la escalera */
+.pos-1 { left: 0px;   top: 0px; }
+.pos-2 { left: 30px;  top: 20px; }
+.pos-3 { left: 60px;  top: 40px; }
+.pos-4 { left: 90px;  top: 60px; }
+.pos-5 { left: 120px; top: 80px; }
+
+/*RESULTADO 1: 10 al frente (z-index mayor a menor)*/
+.resultado1.pos-1 { z-index: 5; }
+.resultado1.pos-2 { z-index: 4; }
+.resultado1.pos-3 { z-index: 3; }
+.resultado1.pos-4 { z-index: 2; }
+.resultado1.pos-5 { z-index: 1; }
+
+/*RESULTADO 2: As al frente (z-index menor a mayor)*/
+.resultado2.pos-1 { z-index: 1; }
+.resultado2.pos-2 { z-index: 2; }
+.resultado2.pos-3 { z-index: 3; }
+.resultado2.pos-4 { z-index: 4; }
+.resultado2.pos-5 { z-index: 5; }
