@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería - Pedidos</title>
+    <link rel="stylesheet" href="cafeteria.css">
+    <script src="pedidos.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Pedidos de Cafetería</h1>
+
+        <!-- Formulario -->
+        <div class="seccion-form">
+            <h3>Ingresar Nuevo Pedido</h3>
+            <form id="idFormulario">
+                <div class="campo">
+                    <label for="idTxtProducto">Producto:</label>
+                    <input type="text" id="idTxtProducto" placeholder="Ej. Café" required>
+                </div>
+                <div class="campo">
+                    <label for="idTxtPrecio">Precio Unitario:</label>
+                    <input type="number" step="0.01" id="idTxtPrecio" placeholder="0.00" required>
+                </div>
+                <div class="campo">
+                    <label for="idTxtCantidad">Cantidad:</label>
+                    <input type="number" id="idTxtCantidad" placeholder="1" required>
+                </div>
+                <button type="submit" id="idBtnAgregar" class="btn-guardar">Agregar pedido</button>
+            </form>
+        </div>
+
+        <!-- Filtro -->
+        <div class="seccion-filtro">
+            <label for="idTxtPrecioMax">Precio máximo:</label>
+            <input type="number" step="0.01" id="idTxtPrecioMax" placeholder="0.00">
+            <button type="button" id="idBtnFiltrar" class="btn-opcion">Filtrar productos</button>
+            <button type="button" id="idBtnMostrarTodos" class="btn-opcion">Mostrar todos</button>
+            <button type="button" id="idBtnLimpiar" class="btn-borrar">Limpiar pedidos</button>
+        </div>
+
+        <!-- Tabla -->
+        <div id="idContenedorTabla">
+            <!-- La tabla se dibuja con JS -->
+        </div>
+
+        <!-- Resumen -->
+        <div class="seccion-totales">
+            <p>Total de unidades: <strong id="idTotalUnidades">0</strong></p>
+            <p>Monto total: <strong id="idMontoTotal">$0.00</strong></p>
+        </div>
+    </div>
+</body>
+</html>
